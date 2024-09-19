@@ -1,0 +1,15 @@
+# Aula 4 - Conceitos de RAG com Langchain e Langflow (12/09/2024)
+
+Nessa aula, nos dedicamos à instalação e configuração do **CREW AI** para a criação de agentes de IA, utilizando o modelo **Llama3** e a **API Groq**. Devido a problemas com compatibilidade no Windows, optamos por usar o **WSL (Windows Subsystem for Linux)**, que nos permitiu rodar um ambiente Linux diretamente dentro do Windows, utilizando apenas o terminal.
+
+Começamos clonando o repositório com os arquivos necessários para o projeto. Em seguida, criamos um ambiente virtual, o que nos possibilitou isolar as dependências do projeto, garantindo que não houvesse conflitos com outras bibliotecas instaladas no sistema. Para isso, utilizamos o comando `python -m venv venv`, que cria o ambiente, seguido do comando `source venv/bin/activate` para ativá-lo. No Windows, esse comando é um pouco diferente, sendo necessário rodar `venv\\Scripts\\activate`.
+
+Com o ambiente virtual ativado, instalamos todas as dependências do projeto, listadas no arquivo `requirements.txt`, usando o comando `pip install -r requirements.txt`. Logo após, configuramos o acesso ao modelo Llama3, adicionando a chave da **API Groq** em um arquivo `.env`, essencial para a comunicação entre o código e a API. O código Python foi escrito para carregar essa chave e garantir que a configuração estivesse correta, verificando se a chave foi carregada com sucesso.
+
+Após a configuração inicial, partimos para a execução do agente de IA utilizando o arquivo `main.py`. Para testar, utilizamos alguns prompts, inicialmente em inglês, mas fizemos ajustes para que as respostas fossem geradas em **Português do Brasil**, adequando o sistema às necessidades do projeto. Alteramos o nome do arquivo de saída para `news.md`, para armazenar o resultado da execução dos agentes em um formato mais adequado.
+
+Além disso, acessamos o **site do Langflow** diretamente para criar e gerenciar fluxos de IA de forma visual. Embora o Langflow possa ser instalado localmente, nesta aula optamos por usar a versão web da plataforma, o que facilitou o processo. Durante o trabalho no site, conectamos o fluxo às **chaves da API Mitra**, o que permitiu criar um fluxo integrado de IA diretamente pela interface do Langflow. Isso nos possibilitou explorar melhor o potencial de integração e automação de tarefas por meio da IA.
+
+O uso do **WSL** foi fundamental, pois o **CREW AI** e outras ferramentas apresentaram problemas de compatibilidade quando tentamos rodá-los diretamente no Windows. O WSL nos permitiu executar as ferramentas no ambiente Linux sem a necessidade de configurar uma máquina virtual completa, tornando o processo mais leve e ágil.
+
+No final da aula, entendemos como essas ferramentas se integram e como podemos utilizá-las para criar agentes de IA, ajustando prompts e conectando APIs como a do **Mitra** para automatizar tarefas de forma mais eficiente.
