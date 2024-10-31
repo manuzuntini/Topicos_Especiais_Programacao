@@ -1,4 +1,4 @@
-# Aula 2 - Por que preciso de uma VPS, um Domínio e DNS (Cloudflare (22/08/2024)
+# Aula 2 - VPS, Docker, Domínio e DNS (Cloudflare)? (22/08/2024)
 
 Nesta aula, aprendemos sobre várias ferramentas e tecnologias fundamentais para o desenvolvimento moderno, incluindo **VPS**, **Domínio**, **DNS (Cloudflare)**, e plataformas como **Docker** e **WSL 2**. Também exploramos mecanismos de busca como **DuckDuckGo** e integramos essas tecnologias em nosso ambiente de desenvolvimento.
 
@@ -69,3 +69,7 @@ Nesta aula, aprendemos sobre várias ferramentas e tecnologias fundamentais para
 - Instalamos o **Ubuntu** no WSL 2 como parte da configuração de nosso ambiente de desenvolvimento. Isso permitiu criar um ambiente Linux completo dentro do Windows, facilitando o uso de ferramentas que exigem sistemas baseados em Unix.
 - **Ferramentas de LLMs (Large Language Models)**:
     - Baixamos e configuramos ferramentas essenciais para trabalhar com **Large Language Models**, como o **LLM Studio**, **Anything LLM**, e **Ollama**. Essas ferramentas são importantes para o desenvolvimento de soluções baseadas em IA e aprendizado de máquina.
+
+---
+
+[Ferramenta de Busca.md](Ferramenta_de_Busca.md)

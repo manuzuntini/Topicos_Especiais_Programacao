@@ -1,0 +1,206 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: PegarSlots_cal.com
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - description: ''
+    id: 986eafa6-9936-4627-a9f2-a98bfc9113a2
+    name: eventTypeId
+    value: '1261130'
+    value_type: string
+  - description: ''
+    id: 5eea3bcf-a116-4cd0-becd-1393ec9f6e53
+    name: API_CAL_COM
+    value: ''
+    value_type: secret
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: http-request
+      id: 1728608370834-source-1728608653056-target
+      source: '1728608370834'
+      sourceHandle: source
+      target: '1728608653056'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1728608653056-source-1728609740108-target
+      source: '1728608653056'
+      sourceHandle: source
+      target: '1728609740108'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1728609740108-source-1728609766108-target
+      source: '1728609740108'
+      sourceHandle: source
+      target: '1728609766108'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Iniciar
+        type: start
+        variables:
+        - label: dataInicio (yyyy-MM-dd)
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: dataInicio
+        - label: dataFim (yyyy-MM-dd)
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: dataFim
+      height: 116
+      id: '1728608370834'
+      position:
+        x: 80
+        y: 281
+      positionAbsolute:
+        x: 80
+        y: 281
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: ''
+          type: none
+        desc: ''
+        headers: Authorization:Bearer {{#env.API_CAL_COM#}}
+        method: get
+        params: 'eventTypeId:{{#env.eventTypeId#}}
+
+          startTime:{{#1728608370834.dataInicio#}}
+
+          endTime:{{#1728608370834.dataFim#}}'
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Requisição HTTP
+        type: http-request
+        url: https://api.cal.com/v2/slots/available
+        variables: []
+      height: 110
+      id: '1728608653056'
+      position:
+        x: 383
+        y: 281
+      positionAbsolute:
+        x: 383
+        y: 281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(httpResponse):\n    body = json.loads(httpResponse)\n\
+          \    slots = body['data']['slots']\n    return {\n        \"result\":slots\n\
+          }\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: object
+        selected: false
+        title: FILTRAR JSON
+        type: code
+        variables:
+        - value_selector:
+          - '1728608653056'
+          - body
+          variable: httpResponse
+      height: 54
+      id: '1728609740108'
+      position:
+        x: 765.1911519047358
+        y: 169.60449509691597
+      positionAbsolute:
+        x: 765.1911519047358
+        y: 169.60449509691597
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1728609740108'
+          - result
+          variable: result
+        selected: false
+        title: Fim
+        type: end
+      height: 90
+      id: '1728609766108'
+      position:
+        x: 1071.3251406525328
+        y: 288.69606751321567
+      positionAbsolute:
+        x: 1071.3251406525328
+        y: 288.69606751321567
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -195.82967025706682
+      y: 138.4943040493006
+      zoom: 0.47500019143744315

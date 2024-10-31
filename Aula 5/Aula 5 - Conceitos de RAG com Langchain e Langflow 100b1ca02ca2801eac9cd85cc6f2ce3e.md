@@ -1,4 +1,4 @@
-# Aula 4 - Conceitos de RAG com Langchain e Langflow (12/09/2024)
+# Aula 5 - Conceitos de RAG com Langchain e Langflow (12/09/2024)
 
 Nessa aula, nos dedicamos à instalação e configuração do **CREW AI** para a criação de agentes de IA, utilizando o modelo **Llama3** e a **API Groq**. Devido a problemas com compatibilidade no Windows, optamos por usar o **WSL (Windows Subsystem for Linux)**, que nos permitiu rodar um ambiente Linux diretamente dentro do Windows, utilizando apenas o terminal.
 
@@ -13,3 +13,9 @@ Além disso, acessamos o **site do Langflow** diretamente para criar e gerenciar
 O uso do **WSL** foi fundamental, pois o **CREW AI** e outras ferramentas apresentaram problemas de compatibilidade quando tentamos rodá-los diretamente no Windows. O WSL nos permitiu executar as ferramentas no ambiente Linux sem a necessidade de configurar uma máquina virtual completa, tornando o processo mais leve e ágil.
 
 No final da aula, entendemos como essas ferramentas se integram e como podemos utilizá-las para criar agentes de IA, ajustando prompts e conectando APIs como a do **Mitra** para automatizar tarefas de forma mais eficiente.
+
+[Chat com memoria .json](Chat_com_memoria_.json)
+
+[Busca pdf.json](Busca_pdf.json)
+
+[main.py](main.py)

@@ -1,4 +1,4 @@
-# Aula 3 - Engenharia de Prompt (29/08/2024)
+# Aula 4 - Engenharia de Prompt (05/08/2024)
 
 Na **Aula 4**, exploramos profundamente a **Engenharia de Prompt (EP)**, uma disciplina emergente focada na criação e otimização de **prompts** — instruções textuais que orientam os modelos de linguagem de grande escala (LLMs) a gerar respostas precisas e úteis. Esse processo é essencial para maximizar a eficiência dos LLMs, já que os prompts determinam como os modelos interpretam e processam as solicitações dos usuários.
 
@@ -33,3 +33,5 @@ A estruturação eficaz dos prompts também foi um ponto central na aula. Cada p
 4. **Indicador de Saída**: Especifica o formato da resposta esperada, como uma lista, um resumo ou uma explicação detalhada.
 
 Também aprendemos que os prompts podem responder a estímulos humanos como "faça mais rápido, você vai ser demitido", o que faz com que o chat assuma mais responsabilidade ao gerar as respostas.
+
+[Untitled document.json](Untitled_document.json)
